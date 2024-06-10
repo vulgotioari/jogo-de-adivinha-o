@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.screen.visible {
+    display: flex;
+}
+
+input, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+<body>
+    <div id="welcome-screen" class="screen">
+        <h1>Bem-vindo ao Jogo de Adivinhação!</h1>
+        <form id="welcome-form">
+            <label for="username">Digite seu nome:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Jogar</button>
+        </form>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <h1>Olá, <span id="player-name"></span>!</h1>
+        <p>Adivinhe um número entre 1 e 100:</p>
+        <input type="number" id="guess-input" min="1" max="100" required>
+        <button id="guess-button">Adivinhar</button>
+        <p id="feedback"></p>
+    </div>
+
+    <div id="result-screen" class="screen hidden">
+        <h1>Parabéns, <span id="result-player-name"></span>!</h1>
+        <p>Você adivinhou o número <span id="correct-number"></span>.</p>
+        <p>Sua pontuação: <span id="attempts-count"></span> tentativas.</p>
+        <button id="play-again-button">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
