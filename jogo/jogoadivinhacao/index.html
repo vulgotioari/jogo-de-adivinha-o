@@ -5,68 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Adivinhação</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<style>
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-}
-
-.screen {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.screen.visible {
-    display: flex;
-}
-
-input, button {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.hidden {
-    display: none;
-}
-
-
-
-
-
-
-</style>
-
-
-
-
 <body>
-    <div id="welcome-screen" class="screen">
+    <div id="welcome-screen" class="screen visible">
+        <img src="https://i.pinimg.com/736x/0e/23/0b/0e230b20811713c9fa1ca00ac2c6d583.jpg" alt="Bem-vindo">
         <h1>Bem-vindo ao Jogo de Adivinhação!</h1>
         <form id="welcome-form">
             <label for="username">Digite seu nome:</label>
@@ -76,6 +19,7 @@ button:hover {
     </div>
 
     <div id="game-screen" class="screen hidden">
+        <img src="https://ufob.edu.br/noticias/i-workshop-do-profmat-ufob-sera-realizado-dia-24-de-novembro/imagem-com-varios-numeros-aleatorios/@@images/image.jpeg  " alt="jogo">
         <h1>Olá, <span id="player-name"></span>!</h1>
         <p>Adivinhe um número entre 1 e 100:</p>
         <input type="number" id="guess-input" min="1" max="100" required>
@@ -84,6 +28,7 @@ button:hover {
     </div>
 
     <div id="result-screen" class="screen hidden">
+        <img src="https://ufob.edu.br/noticias/i-workshop-do-profmat-ufob-sera-realizado-dia-24-de-novembro/imagem-com-varios-numeros-aleatorios/@@images/image.jpeg" alt="Resultado">
         <h1>Parabéns, <span id="result-player-name"></span>!</h1>
         <p>Você adivinhou o número <span id="correct-number"></span>.</p>
         <p>Sua pontuação: <span id="attempts-count"></span> tentativas.</p>
